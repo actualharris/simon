@@ -6,8 +6,25 @@ let userClickedPattern = [];
 let started = false;
 let level = 0;
 
-// Game Start code
+// Game Start code: KEYBOARD
 $(document).on("keydown", function(event){
+    // console.log(event.key);
+
+    // debugger
+    // If started is false, !started will be true, so the code inside the if block will run (e.g., starting the game).
+	// Once the game starts and started is set to true, !started will now be false, and the code inside the if block will not run anymore.
+    if (!started) {
+
+        $("#level-title").text("Level " + level);
+        nextSequence();
+        // console.log("set to " +started);
+        started = true;
+        // console.log(started);
+    }
+});
+
+// Game Start code: TOUCHSCREEN
+$(document).on("touchstart", function(event){
     // console.log(event.key);
 
     // debugger
